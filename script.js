@@ -33,6 +33,11 @@ function getHumanChoice() {
 let humanScore=0;
 let computerScore=0;
 
+function resetScores() {
+    humanScore = 0;
+    computerScore = 0;
+}
+
 computerChoice = getComputerChoice();
 humanChoice = getHumanChoice();
 function playRound(humanChoice, computerChoice) {
