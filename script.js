@@ -18,11 +18,11 @@ function getComputerChoice() {
 
 
 function getHumanChoice() {
-    let humanChoice = prompt("Please choose rock, paper, or scissors:").toLowerCase();
+    let humanChoice = (prompt("Please choose rock, paper, or scissors:") || "").trim().toLowerCase();
     while (humanChoice !== "rock" &&
            humanChoice !== "paper" &&
            humanChoice !== "scissors") {
-        humanChoice = prompt("Invalid choice. Please choose rock, paper, or scissors:").toLowerCase();
+        humanChoice = (prompt("Invalid choice. Please choose rock, paper, or scissors:") || "").trim().toLowerCase();
     }
     return humanChoice;
 }
