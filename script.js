@@ -36,6 +36,14 @@ let computerScore=0;
 function resetScores() {
     humanScore = 0;
     computerScore = 0;
+    updateScores();
+}
+
+function updateScores() {
+    const hs = document.getElementById('human-score');
+    const cs = document.getElementById('computer-score');
+    if (hs) hs.textContent = `You: ${humanScore}`;
+    if (cs) cs.textContent = `Computer: ${computerScore}`;
 }
 
 computerChoice = getComputerChoice();
@@ -49,9 +57,11 @@ function playRound(humanChoice, computerChoice) {
         (humanChoice === "scissors" && computerChoice === "paper")
     ) {
         humanScore++;
+        updateScores();
         return `You win! ${humanChoice} beats ${computerChoice}.`;
     } else {
         computerScore++;
+        updateScores();
         return `You lose! ${computerChoice} beats ${humanChoice}.`;
     }}
 
