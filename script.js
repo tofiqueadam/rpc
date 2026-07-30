@@ -71,3 +71,6 @@ function playRound(humanChoice, computerChoice) {
     }
 
 playGame();
+
+// Expose for use by a Play button or from the console
+window.playGame = playGame;
