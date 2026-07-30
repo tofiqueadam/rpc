@@ -63,3 +63,6 @@ function playRound(humanChoice, computerChoice) {
         } else {
             console.log(`The game is a tie! Final score: You ${humanScore} - Computer ${computerScore}`);
         }
+    }
+
+playGame();
