@@ -46,8 +46,7 @@ function updateScores() {
     if (cs) cs.textContent = `Computer: ${computerScore}`;
 }
 
-computerChoice = getComputerChoice();
-humanChoice = getHumanChoice();
+
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         return "It's a tie!";
@@ -80,7 +79,14 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 
-playGame();
-
 // Expose for use by a Play button or from the console
 window.playGame = playGame;
+
+// Wire the Play button (if present) to reset scores and start the game
+const playBtn = document.getElementById('play-button');
+if (playBtn) {
+    playBtn.addEventListener('click', () => {
+        resetScores();
+        playGame();
+    });
+}
